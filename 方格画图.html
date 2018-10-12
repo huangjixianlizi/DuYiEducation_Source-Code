@@ -17,7 +17,7 @@
 		}
 
 		ul{
-			width: 1530px;
+			width: 100%;
 			/*height: 1000px;*/
 			list-style: none;
 		}
@@ -27,6 +27,7 @@
 	</style>
 </head>
 <body>
+	<button style="width:60px;height: 30px;line-height: 30px;text-align: center;position: absolute;right: 0;top: 0;" onclick="cl()">clear</button>
 
 	<ul>
 		<li img-data="0"></li>
@@ -11209,6 +11210,13 @@
 			// target.style.backgroundColor = "rgb(0,255,"+ target.getAttribute('img-data') + ")";
 			// target.setAttribute('img-data', parseInt(target.getAttribute('img-data')) +100);
 			target.style.backgroundColor = "rgb(" + Math.floor(Math.random()*255) +"," +Math.floor(Math.random()*255)+"," + Math.floor(Math.random()*255) +")";
+		}
+
+		var li = document.getElementsByTagName('li');
+		var cl = function(){
+			for(var i = 0; i<li.length;i++){
+				li[i].style.backgroundColor = 'transparent';
+			}
 		}
 
 	</script>
