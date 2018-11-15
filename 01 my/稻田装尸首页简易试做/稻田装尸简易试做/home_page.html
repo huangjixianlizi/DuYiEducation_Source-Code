@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>稻田装尸-动漫分享站(仿)--黄继贤</title>
+    <link rel="stylesheet" type="text/css" href="home_page.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="superslide.2.1.js"></script>
+    <script type="text/javascript" src="home_page.js"></script>
+
+</head>
+
+<body>
+    
+    <!-- 导航栏 (固定)-->
+    <div id="navigation_bar_fixed">
+        <div class="content">
+            <ul>
+                <li class="fixed_0" onclick="document.location.href='https://www.dm2046.com/'">
+                </li>
+                <li class="fixed_1">
+                    <a href="https://www.dm2046.com/">首页</a>
+                </li>
+                <li class="fixed_2">
+                    <a href="https://www.dm2046.com/movie_bt">动漫目录</a>
+                </li>
+                <li class="fixed_3">
+                    <a href="https://www.dm2046.com/%e4%b8%80%e5%91%a8%e7%83%ad%e9%97%a8">一周热门</a>
+                </li>
+                <li class="fixed_4">
+                    <a href="https://www.dm2046.com/%e6%8e%92%e8%a1%8c%e6%a6%9c">排行榜</a>
+                </li>
+                <li class="fixed_5">
+                    <a href="https://www.dm2046.com/%e5%8a%a8%e6%bc%ab">在线看vip视频</a>
+                </li>
+                <li class="fixed_6">
+                    <a href="https://www.dm2046.com/%e6%96%b0%e7%95%aa%e6%9b%b4%e6%96%b0%e8%a1%a8">新番更新表</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ding"></div>
+    <!-- 顶部直达 -->
+    <div id="top" title="返回顶部">
+        <a href="javascript:scrollTo(0,0);">Q</a>
+    </div>
+    <!-- 轮播图 -->
+    <div class="slider">
+        <div class="bd">
+            <ul>
+                <li><a href="#"><img src="images/1.png" class="img_lunbo" /></a></li>
+                <li><a href="#"><img src="images/2.png" class="img_lunbo" /></a></li>
+                <li><a href="#"><img src="images/3.png" class="img_lunbo"/></a></li>
+                <li><a href="#"><img src="images/4.png" class="img_lunbo"/></a></li>
+            </ul>
+        </div>
+        <div class="hd">
+            <ul></ul>
+        </div>
+        <div class="pnBtn prev"><span class="blackBg"></span><a class="arrow" href="javascript:void(0)"></a></div>
+        <div class="pnBtn next"><span class="blackBg"></span><a class="arrow" href="javascript:void(0)"></a></div>
+    </div>
+    <!-- 导航栏 -->
+    <div id="navigation_bar">
+        <ul>
+            <li class="fixed_2">
+                <a href="https://www.dm2046.com/movie_bt">动漫目录</a>
+            </li>
+            <li class="fixed_3">
+                <a href="https://www.dm2046.com/%e4%b8%80%e5%91%a8%e7%83%ad%e9%97%a8">一周热门</a>
+            </li>
+            <li class="fixed_4">
+                <a href="https://www.dm2046.com/%e6%8e%92%e8%a1%8c%e6%a6%9c">排行榜</a>
+            </li>
+            <li class="fixed_6">
+                <a href="https://www.dm2046.com/%e6%96%b0%e7%95%aa%e6%9b%b4%e6%96%b0%e8%a1%a8">新番更新表</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 轮换图片 -->
+     <div class="wrapper">
+        <ul>
+            <li class="line">
+                <a href="https://www.dm2046.com/movie/11055.html">
+                <img src="./lunbo_images/1.jpg" alt=""></a>
+            </li>
+            <li class="line">
+                <a href="https://www.dm2046.com/movie/11061.html">
+                <img src="./lunbo_images/2.jpg" alt=""></a>
+            </li>
+            <li class="line">
+                <a href="https://www.dm2046.com/movie/11044.html">
+                <img src="./lunbo_images/3.jpg" alt=""></a>
+            </li>
+            <li class="line">
+                <a href="https://www.dm2046.com/movie/11104.html"> 
+                <img src="./lunbo_images/4.jpg" alt=""></a>
+            </li>
+            <li class="line">
+                <a href="https://www.dm2046.com/movie/11108.html">
+                <img src="./lunbo_images/5.jpg" alt=""></a>
+            </li>
+            <li class="line">
+                <a href="https://www.dm2046.com/movie/5480.html">
+                <img src="./lunbo_images/6.jpg" alt=""></a>
+            </li>
+            <li class="line">
+                <a href="https://www.dm2046.com/movie/8210.html">
+                <img src="./lunbo_images/7.jpg" alt=""></a>
+            </li>
+        </ul>
+
+        <div class="btn" id="prev">上一张</div>
+        <div class="btn" id="next">下一张</div>
+        
+    </div> 
+    <!-- 最新电影 -->
+    <div id="film">
+        <div class="title">
+            <img src="./img/title_left.png">
+            <div class="font">
+                <a href="https://www.dm2046.com/">最新电影</a>
+            </div>
+        </div>
+        <div class="film_content1">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/8210.html">
+				<span>BT</span>
+				<img src="./img/film_1.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/8210.html">命运石之门0</a>
+            </div>
+            <div class="content_introduce">
+                主演：宫野真守,花泽香菜,关智一,今井麻美
+            </div>
+        </div>
+        <div class="film_content2">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/8210.html">
+				<span>BT</span>
+				<img src="./img/film_2.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/8210.html">元寇合战记</a>
+            </div>
+            <div class="content_introduce">
+                主演：小野友树,Lynn,小山力也,乃村健次,斋藤志
+            </div>
+        </div>
+        <div class="film_content3">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/9262.html">
+				<span>BT</span>
+				<img src="./img/film_3.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/9262.html">Free!第三季 -Dive to the Future-</a>
+            </div>
+            <div class="content_introduce">
+                主演：岛崎信长,铃木达央,宫野真守,内山昂辉,丰
+            </div>
+        </div>
+        <div class="film_content4">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/10726.html">
+				<span>BT</span>
+				<img src="./img/film_4.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/10726.html">精灵旅社3：疯狂假期</a>
+            </div>
+            <div class="content_introduce">
+                主演：亚当·桑德勒,凯瑟琳·哈恩,史蒂夫·布西密,赛
+            </div>
+        </div>
+        <div class="film_content5">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/8873.html">
+				<span>BT</span>
+				<img src="./img/film_5.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/8873.html">腌黄瓜先生 第三季</a>
+            </div>
+            <div class="content_introduce">
+                主演：Kaitlyn Robrock,戴夫·斯图尔特,波姬·小
+            </div>
+        </div>
+    </div>
+    <!-- 动作 -->
+    <div id="action">
+        <div class="title">
+            <img src="./img/title_left.png">
+            <div class="font">
+                <a href="https://www.dm2046.com/?s=%E5%8A%A8%E4%BD%9C">动作</a>
+            </div>
+        </div>
+        <div class="action_content1">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/5361.html">
+				<span>BT</span>
+				<img src="./img/action_1.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/5361.html">异邦人：无皇刃谭</a>
+            </div>
+            <div class="content_introduce">
+                主演：长濑智也,知念侑李,山寺宏一,伊井笃史,野
+            </div>
+        </div>
+        <div class="action_content2">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/7837.html">
+				<span>BT</span>
+				<img src="./img/action_2.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/7837.html">爆炸头武士</a>
+            </div>
+            <div class="content_introduce">
+                主演：Samuel L. Jackson / Kelly Hu / Ron Pe
+            </div>
+        </div>
+        <div class="action_content3">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/4700.html">
+				<span>BT</span>
+				<img src="./img/action_3.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/4700.html">一拳超人</a>
+            </div>
+            <div class="content_introduce">
+                主演：古川慎,石川界人,梶裕贵,悠木碧,中村悠一
+            </div>
+        </div>
+        <div class="action_content4">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/4968.html">
+				<span>BT</span>
+				<img src="./img/action_4.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/4968.html">进击的巨人</a>
+            </div>
+            <div class="content_introduce">
+                主演： 梶裕贵 / 石川由依 / 井上麻里奈 / 小野大辅
+            </div>
+        </div>
+        <div class="action_content5">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/9258.html">
+				<span>BT</span>
+				<img src="./img/action_5.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/9258.html">天狼 Sirius the Jaeger</a>
+            </div>
+            <div class="content_introduce">
+                主演上村祐翔,樱井孝宏,堀内贤雄,森奈奈
+            </div>
+        </div>
+    </div>
+    <!-- 爱情 -->
+    <div id="love">
+        <div class="title">
+            <img src="./img/title_left.png">
+            <div class="font">
+                <a href="https://www.dm2046.com/?s=%E7%88%B1%E6%83%85">爱情</a>
+            </div>
+        </div>
+        <div class="love_content1">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/4756.html">
+				<span>BT</span>
+				<img src="./img/love_1.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/4756.html">你的名字</a>
+            </div>
+            <div class="content_introduce">
+                主演：神木隆之介,上白石萌音,长泽雅美,市原悦
+            </div>
+        </div>
+        <div class="love_content2">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/4709.html">
+				<span>BT</span>
+				<img src="./img/love_2.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/4709.html">春之觉醒</a>
+            </div>
+            <div class="content_introduce">
+                主演：
+            </div>
+        </div>
+        <div class="love_content3">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/4771.html">
+				<span>BT</span>
+				<img src="./img/love_3.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/4771.html">侧耳倾听</a>
+            </div>
+            <div class="content_introduce">
+                主演：本名阳子,小林桂树,高山南,高桥一生,山
+            </div>
+        </div>
+        <div class="love_content4">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/4882.html">
+				<span>BT</span>
+				<img src="./img/love_4.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/4882.html">狼少女与黑王子</a>
+            </div>
+            <div class="content_introduce">
+                主演：樱井孝宏,伊藤加奈惠,松冈祯丞,细谷佳正
+            </div>
+        </div>
+        <div class="love_content5">
+            <div class="content_picture">
+                <a href="https://www.dm2046.com/movie/5577.html">
+				<span>BT</span>
+				<img src="./img/love_5.png" class="img_img">
+			</a>
+            </div>
+            <div class="content_name">
+                <a href="https://www.dm2046.com/movie/5577.html">玉子爱情故事</a>
+            </div>
+            <div class="content_introduce">
+                主演：洲崎绫，田丸笃志，金子有希，长妻树里，山下百合恵
+            </div>
+        </div>
+    </div>
+    <div id="emm">
+    </div>
+    <!-- 声明 -->
+    <div id="declaration">
+        <div class="bottom_bar">
+            <ul>
+                <li class="fixed_2">
+                    <a href="https://www.dm2046.com/movie_bt">动漫目录</a>
+                </li>
+                <li class="fixed_3">
+                    <a href="https://www.dm2046.com/%e4%b8%80%e5%91%a8%e7%83%ad%e9%97%a8">一周热门</a>
+                </li>
+                <li class="fixed_4">
+                    <a href="https://www.dm2046.com/%e6%8e%92%e8%a1%8c%e6%a6%9c">排行榜</a>
+                </li>
+                <li class="fixed_5">
+                    <a href="https://www.dm2046.com/%e5%8a%a8%e6%bc%ab">在线看vip视频</a>
+                </li>
+                <li class="fixed_6">
+                    <a href="https://www.dm2046.com/%e6%96%b0%e7%95%aa%e6%9b%b4%e6%96%b0%e8%a1%a8">新番更新表</a>
+                </li>
+            </ul>
+        </div>
+        <div class="state">
+            申明：本站属于互联网自由分享，所有bt文件均来自互联网，分享于互联网，本站只作为一个bt暂存平台；本站并不属于bt的提供者、制作者、所有者，因此本站不承担任何法律责任！
+        </div>
+        <div class="fri">
+            <div class="fri_1">友情链接</div>
+            <div class="fri_2">
+                <ul>
+                    <li class="fixed_2">
+                        <a href="http://www.zhuimj.cn/">追美剧网</a>
+                    </li>
+                    <li class="fixed_3">
+                        <a href="http://www.lsdhss.com/">猎手导航</a>
+                    </li>
+                    <li class="fixed_4">
+                        <a href="http://www.116kan.com/">动漫大全</a>
+                    </li>
+                    <li class="fixed_5">
+                        <a href="http://www.lsjlp8.com/">猎手纪录片吧</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        Copyright © 2017年稻田装尸 All Rights Reserved. | THEME DESIGN BY 蓝色早晨
+    </div>
+    <script type="text/javascript" src="canvas.js"></script>
+    <canvas id="canvas"></canvas><!-- 彩蛋 -->
+</body>
+
+</html>

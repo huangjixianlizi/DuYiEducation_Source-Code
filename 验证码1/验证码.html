@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body, div {
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            font-family: "微软雅黑";
+            -webkit-user-selelct: none;
+        }
+
+        #code {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -50px;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #ff0000;
+            cursor: pointer;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="code">
+    xdF2
+</div>
+<script type="text/javascript">
+    //当前验证码获取的随即范围
+    var codeStr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    //思想：0-61索引 只需要随机生成4个索引，然后charAt可以获取随机4个索引。
+    var oDiv = document.getElementById("code");
+
+    function getRandom(n, m) {
+        n = Number(n);              //转换n,m，结果不是数字就是NaN
+        m = Number(m);
+        if (isNaN(n) || isNaN(m)) {          //判断n,m,是不是有效数字，如果n或m其中一个传入的不是数字
+            return Math.random();           //返回  【0-1）之间的随机小数
+        }
+        if (n > m) {                          //如果n大于m，则交换位置
+            var temp = n;
+            n = m;
+            m = temp;
+        }
+        return Math.round(Math.random() * (m - n) + n);                   //返回，取m,n之间的随机整数。
+    }
+
+
+    function getCode() {              
+        var str = "";　　　　　　　　//定义一个空字符串备用
+        for (var i = 0; i < 5; i++) {        //遍历4个索引
+            var ran = getRandom(0, 61);           //调用getRandom方法，随机获取一个索引0-61里的随机索引
+            str += codeStr.charAt(ran);           //把codeStr字符串里，我们指定获取ran（这个4个索引）；
+        }
+        oDiv.innerHTML = str;              //呈现在页面上
+    }
+
+    getCode();                           //调用方法
+                    
+    oDiv.onclick = function () {
+        getCode();
+    }
+</script>
+</body>
+</html>

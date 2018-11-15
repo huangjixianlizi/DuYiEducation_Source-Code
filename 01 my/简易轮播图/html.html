@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+<!--     <link rel="stylesheet" type="text/css" href="css.css"> -->
+    <!--     <script type="text/javascript" src="jquery-2.1.0.js"></script>-->
+    <style type="text/css">
+    * {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+    }
+
+    .wrapper {
+        position: relative;
+        margin: 100px auto 0px;
+        width: 400px;
+        height: 250px;
+        /*			border: 1px solid #000;*/
+        overflow: hidden;
+    }
+
+    .wrapper .sliderPage {
+        height: 250px;
+        width: 2000px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .wrapper .sliderPage li {
+        height: 250px;
+        width: 400px;
+        float: left;
+    }
+
+    .wrapper .sliderPage li img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .wrapper .btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        width: 30px;
+        height: 40px;
+        color: #fff;
+        background-color: #000;
+        text-align: center;
+        line-height: 40px;
+        opacity: 0.1;
+        cursor: pointer;
+    }
+
+    .wrapper:hover .btn {
+        opacity: 0.7;
+    }
+
+    .wrapper .leftBtn {
+        left: 15px;
+    }
+
+    .wrapper .rightBtn {
+        right: 15px;
+    }
+
+
+    .wrapper .sliderIndex {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .wrapper .sliderIndex span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .wrapper .sliderIndex .active {
+        background-color: #f40;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="sliderPage">
+            <li>
+                <img src="./img/jpg1.jpg">
+			</li>
+            <li>
+                <img src="./img/jpg2.jpg">
+			</li>
+            <li>
+                <img src="./img/jpg3.jpg">
+			</li>
+            <li>
+                <img src="./img/jpg4.jpg">
+			</li>
+            <li>
+                <img src="./img/jpg1.jpg">
+			</li>
+        </ul>
+        <div class="btn leftBtn">&lt;</div>
+        <div class="btn rightBtn">&gt;</div>
+        <div class="sliderIndex">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script type="text/javascript" src="js.js">
+    </script>
+    <script type="text/javascript">
+    var timer = null;
+    var sliderPage = document.getElementsByClassName('sliderPage')[0];
+    var moveWidth = sliderPage.children[0].offsetWidth;
+    var num = sliderPage.children.length - 1; //轮播图片数
+    var leftBtn = document.getElementsByClassName('leftBtn')[0];
+    var rightBtn = document.getElementsByClassName('rightBtn')[0];
+    var oSpanArray = document.getElementsByClassName('sliderIndex')[0].getElementsByTagName('span');
+    var oSpanArrayLen = oSpanArray.length;
+    var index = 0;
+    ////解决第四个问题，疯狂点击按钮时会出现图片你运动到一半切换到下一张这样moveWidth就是出现偏差，在跳转时则会跳出ul出现空白
+    var lock = true;
+    //使用按钮浏览
+    leftBtn.onclick = function() {
+        autoMove('right->left');
+    }
+    rightBtn.onclick = function() {
+        autoMove('left->right');
+    }
+    //小圆点绑定轮播图
+    for(var i = 0; i < oSpanArrayLen; i++){
+    	(function(myIndex){
+    		oSpanArray[i].onclick = function(){
+    			lock = false;
+    			clearTimeout(timer);
+    			index = myIndex;
+    			startMove(sliderPage,{left : - index * moveWidth},function(){
+    				lock = true;
+    				timer = setTimeout(autoMove, 1500);
+    				changeIndex(index);
+    			});
+    		}
+    	}(i))	
+    }
+
+    //direction
+    //默认轮播方向/点击right按钮 'left->right' / underfined
+    //点击left按钮  'right->left'
+    function autoMove(direction) {
+        if (lock) {
+            lock = false;
+            ////第二个bug：定时器的争抢 clearInterval(timer);
+            clearTimeout(timer); ////第三个bug： 点击按钮后不动 解决办法：每次都用settimerout触发
+            //默认方向'left->right'
+            if (!direction || direction == 'left->right') {
+                index++;
+                startMove(sliderPage, { left: sliderPage.offsetLeft - moveWidth }, function() {
+                    //轮播到第5张时跳转到第1张【相同图片 实现无线轮播】
+                    if (sliderPage.offsetLeft == -num * moveWidth) {
+                        index = 0;
+                        sliderPage.style.left = '0px';
+                    }
+                    timer = setTimeout(autoMove, 1500);
+                    lock = true;
+                    changeIndex(index);
+                });
+            } else if (direction == 'right->left') {
+                ////解决点击向左按钮的效果实现会出现一系列bug
+                ////第一个bug： 首张图片点击上一张出现空白
+                if (sliderPage.offsetLeft == 0) {
+                    sliderPage.style.left = -num * moveWidth + 'px';
+                    index = num;
+                }
+                index--;
+                startMove(sliderPage, { left: sliderPage.offsetLeft + moveWidth }, function() {
+                    timer = setTimeout(autoMove, 1500); ////第三个bug： 点击按钮后不动 解决办法：每次都用settimerout触发
+                    lock = true;
+                    changeIndex(index);
+                });
+            }
+        }
+    }
+    //小圆点对应轮播图
+    function changeIndex(_index) {
+    	for(var i = 0; i < oSpanArrayLen; i++){
+    		oSpanArray[i].className = ' ';
+    	}
+    	oSpanArray[_index].className = 'active';
+    }
+
+    timer = setTimeout(autoMove, 1500); ////第三个bug： 点击按钮后不动 解决办法：每次都用settimerout触发
+    </script>
+</body>
+
+</html>
